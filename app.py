@@ -7,8 +7,7 @@ import mysql.connector as mysql
 
 # modèle utilisé
 # modèle de base gpt-4.1-nano-2025-04-14
-# fichier fine-tuning file-2MPUmfbVhpq2XPCcyL4sk3
-modele = "gpt-4.1-nano-2025-04-14"
+modele = "ft:gpt-4.1-nano-2025-04-14:jn-formation::BqyjOIN3"
 
 # initialise connection openai
 def initialiser():
@@ -70,11 +69,11 @@ def main():
             break
         # appel api openai
         # récupère code d'erreur et réponse
-        # code d'erreur 0 = succès
+        # code d'erreur 1 = succès
         code_erreur, reponse = demander(client, prompt)
         # gestion couleur de la réponse
         # vert si succès rouge si erreur
-        code_couleur = "\033[92m" if code_erreur == 0 else "\033[31m"
+        code_couleur = "\033[92m" if code_erreur == 1 else "\033[31m"
         # affichage réponse ou message d'erreur
         print("Bot >> ", code_couleur, reponse, "\033[0m")
         # archivage de l'échange en base de données

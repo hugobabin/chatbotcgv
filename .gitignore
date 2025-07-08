@@ -1,3 +1,4 @@
 .env
 .venv
-train/
+train/addfile.py
+train/finetuning.py
